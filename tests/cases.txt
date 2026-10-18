@@ -1,0 +1,9 @@
+# name | tool | options (after: measurement result CTF; common options are added by run_check.py)
+# References made with the ORIGINAL Priism 4.7.2 binaries under deterministic FFT planning
+# (run_check.py --make-refs).  Input: synthetic 64^3 map and 3D complex OTF (tests/data).
+# AR-Decon's production configuration (scripts/ardecon): SPA map, 3D complex OTF, estimated background
+ard_ncycl5       | core2_decon | @SPA@ -logging=progress -ncycl=5
+ard_ncycl50_np4  | core2_decon | @SPA@ -logging=progress -ncycl=50 @NP4@
+ard_smooth       | core2_decon | @SPA@ -logging=progress -ncycl=20 -lamf=2 -alpha=1000
+# AR-Decon's param_search invocation (only -lamf -alpha -lampc -ncycl -np -oplotfile; the rest default)
+ard_psearch      | core2_decon | @PSEARCH@ -logging=progress -lamf=1 -alpha=10 -lampc=0 -ncycl=20

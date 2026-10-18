@@ -1,0 +1,37 @@
+# conda-build recipe for erdecon (build with: conda build recipe/ --override-channels -c conda-forge)
+{% set version = "1.0.0" %}
+
+package:
+  name: erdecon
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  skip: true  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - make
+    - llvm-openmp  # [osx]
+  host:
+    - fftw
+    - llvm-openmp  # [osx]
+  run:
+    - fftw
+    - llvm-openmp  # [osx]
+
+test:
+  commands:
+    - core2_decon 2>&1 | grep -q "usage: core2_decon measurement result CTF"
+    - core_decon 2>&1 | grep -q "usage: core_decon measurement result CTF"
+
+about:
+  summary: ER-Decon I and II deconvolution programs (core_decon, core2_decon), Priism-free build
+  license: BSD-3-Clause
+  license_file:
+    - LICENSE
+    - NOTICE.md

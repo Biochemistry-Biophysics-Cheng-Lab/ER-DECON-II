@@ -1,0 +1,12 @@
+# CI: build, golden tests, regression suite, static build
+name: ci
+on: [push, pull_request]
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy
+      - run: make -j2
+      - run: make check
+      - run: make STATIC=1 clean all && ./build/bin/core2_decon 2>&1 | grep -q "usage: core2_decon" && ./build/bin/core_decon 2>&1 | grep -q "usage: core_decon"

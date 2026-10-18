@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the ER-Decon paper below."
+title: "ER-Decon II: ER-Decon I and II deconvolution programs (Priism-free build)"
+version: 1.0.0
+license: BSD-3-Clause
+repository-code: "https://github.com/Biochemistry-Biophysics-Cheng-Lab/ER-DECON-II"
+authors:
+  - family-names: Arigovindan
+    given-names: Muthuvel
+  - family-names: Sedat
+    given-names: John W.
+  - family-names: Agard
+    given-names: David A.
+  - name: "Cheng laboratory, UCSF"
+preferred-citation:
+  type: article
+  title: "High-resolution restoration of 3D structures from widefield images with extreme low signal-to-noise-ratio"
+  authors:
+    - {family-names: Arigovindan, given-names: Muthuvel}
+    - {family-names: Fung, given-names: Jennifer C.}
+    - {family-names: Elnatan, given-names: Daniel}
+    - {family-names: Mennella, given-names: Vito}
+    - {family-names: Chan, given-names: Yee-Hung Mark}
+    - {family-names: Pollard, given-names: Michael}
+    - {family-names: Branlund, given-names: Eric}
+    - {family-names: Sedat, given-names: John W.}
+    - {family-names: Agard, given-names: David A.}
+  journal: "Proceedings of the National Academy of Sciences of the USA"
+  volume: 110
+  issue: 43
+  start: 17344
+  end: 17349
+  year: 2013
+  doi: 10.1073/pnas.1315675110
